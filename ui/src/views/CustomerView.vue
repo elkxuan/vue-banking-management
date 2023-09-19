@@ -176,6 +176,7 @@ export default {
         },
         update() {
             axios.post(variable.API_URL + "customer/edit/" + this.CustomerId, {
+                CustomerId: this.CustomerId,
                 CustomerName: this.CustomerName,
                 CustomerPhone: this.CustomerPhone,
                 CustomerEmail: this.CustomerEmail,
