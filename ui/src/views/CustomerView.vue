@@ -102,9 +102,9 @@
                         </div>
                         <div class="col-12">
                             <button type="button" @click="create()" v-if="CustomerId == 0"
-                                class="btn btn-primary">Create</button>
+                                class="btn btn-primary" data-bs-dismiss="modal">Create</button>
                             <button type="button" @click="update()" v-if="CustomerId != 0"
-                                class="btn btn-primary">Update</button>
+                                class="btn btn-primary" data-bs-dismiss="modal">Update</button>
                         </div>
                     </div>
                 </div>
