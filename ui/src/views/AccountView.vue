@@ -60,35 +60,57 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <div class="input-group mb-3">
-                        <span class="input-group-text">Account Number</span>
-                        <input type="text" class="form-control" v-model="AccountNumber">
+                    <div class="row g-3">
+                        <div class="col-md-8">
+                            <div class="form-floating">
+                                <input type="text" class="form-control" id="floatingInputGrid" v-model="AccountNumber"
+                                    placeholder="account number">
+                                <label for="floatingInputGrid">Account Number</label>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-floating">
+                                <select class="form-select" id="floatingSelectGrid" v-model="AccountType"
+                                    aria-label="Floating label select example">
+                                    <option>Savings Account</option>
+                                    <option>Current Account</option>
+                                    <option>Fixed Deposit Account</option>
+                                </select>
+                                <label for="floatingSelectGrid">Account Type</label>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-floating">
+                                <input type="text" class="form-control" id="floatingInputGrid" v-model="CustomerId"
+                                    placeholder="id">
+                                <label for="floatingInputGrid">Customer ID</label>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-floating">
+                                <input type="text" class="form-control" id="floatingInputGrid" v-model="Balance"
+                                    placeholder="RM">
+                                <label for="floatingInputGrid">Balance</label>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-floating">
+                                <select class="form-select" id="floatingSelectGrid" v-model="Status"
+                                    aria-label="Floating label select example">
+                                    <option>Active</option>
+                                    <option>Inactive</option>
+                                </select>
+                                <label for="floatingSelectGrid">Status</label>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <button type="button" @click="create()" v-if="AccountId == 0"
+                                class="btn btn-primary">Create</button>
+                            <button type="button" @click="update()" v-if="AccountId != 0"
+                                class="btn btn-primary">Update</button>
+                        </div>
                     </div>
-                    <div class="input-group mb-3">
-                        <span class="input-group-text">Account Type</span>
-                        <select class="form-select" v-model="AccountType">
-                            <option>Savings Account</option>
-                            <option>Current Account</option>
-                            <option>Fixed Deposit Account</option>
-                        </select>
-                    </div>
-                    <div class="input-group mb-3">
-                        <span class="input-group-text">Customer ID</span>
-                        <input type="text" class="form-control" v-model="CustomerId">
-                    </div>
-                    <div class="input-group mb-3">
-                        <span class="input-group-text">Balance</span>
-                        <input type="text" class="form-control" v-model="Balance">
-                    </div>
-                    <div class="input-group mb-3">
-                        <span class="input-group-text">Status</span>
-                        <select class="form-select" v-model="Status">
-                            <option>Active</option>
-                            <option>Inactive</option>
-                        </select>
-                    </div>
-                    <button type="button" @click="create()" v-if="AccountId == 0" class="btn btn-primary">Create</button>
-                    <button type="button" @click="update()" v-if="AccountId != 0" class="btn btn-primary">Update</button>
+
                 </div>
             </div>
         </div>
